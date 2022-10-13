@@ -1,5 +1,5 @@
 import axios from 'axios';
-const axios = require('axios').default;
+axios.defaults.baseURL = 'https://pixabay.com/api';
 
 export default class ImageFetchApi {
   constructor() {
@@ -8,7 +8,6 @@ export default class ImageFetchApi {
     this.page = 1;
   }
   async getImage() {
-    axios.defaults.baseURL = 'https://pixabay.com/api';
     const searchParams = new URLSearchParams({
       key: '29880081-a66e36470932d0d43dbaf5012',
       q: this.searchQuery,
