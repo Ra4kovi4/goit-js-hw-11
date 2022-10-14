@@ -27,12 +27,16 @@ async function onSubmitForm(e) {
   resetGallery();
 
   imageFetchApi.resetPage();
+  loadMoreBtn.classList.remove('is-hidden');
 
   if (imageFetchApi.query === '') {
     resetGallery();
     loadMoreBtn.classList.remove('is-hidden');
     imageFetchApi.resetPage();
     return;
+  }
+  if (loadMoreBtn.classList.contains('is-hidden')) {
+    loadMoreBtn.classList.toggle('is-hidden');
   }
 
   try {
